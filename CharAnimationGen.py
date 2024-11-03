@@ -11,9 +11,9 @@ char_list = " .,-'`:!1+*abcdefghijklmnopqrstuvwxyz<>()/{}[]?234567890ABCDEFGHIJK
 len_char_list = len(char_list)
 
 def process_frame(frame, target_width=180):
-    height, width, _ = frame.shape  # Get original dimensions
+    height, width, _ = frame.shape  
     aspect_ratio = height / width
-    target_height = int(target_width * aspect_ratio / 2) # Maintain aspect ratio, divide by 2 for better output
+    target_height = int(target_width * aspect_ratio / 2) 
 
     frame_resize = cv2.resize(frame, (target_width, target_height))
     frame_gray = cv2.cvtColor(frame_resize, cv2.COLOR_BGR2GRAY)
@@ -41,12 +41,12 @@ def play_video(video_path):
     fps = cap.get(cv2.CAP_PROP_FPS)
     video_duration = cap.get(cv2.CAP_PROP_FRAME_COUNT) / fps
 
-    # Determine terminal size
+   
     terminal_rows, terminal_columns = os.popen('stty size', 'r').read().split()
     terminal_columns = int(terminal_columns)
 
-    # Play the video's audio
-    audio_process = subprocess.Popen(["ffplay", "-nodisp", "-autoexit", video_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) # Suppress ffplay output
+    
+    audio_process = subprocess.Popen(["ffplay", "-nodisp", "-autoexit", video_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) 
 
     start_time = time.time()
     frame_count = 0
@@ -57,8 +57,8 @@ def play_video(video_path):
 
         txt = process_frame(frame, terminal_columns)
 
-        # Clear the terminal more efficiently (on supported terminals)
-        print("\033c", end="")  # Use \033c for VT-100 compatible terminals
+        
+        print("\033c", end="")  
         print(txt)
 
 
@@ -69,7 +69,7 @@ def play_video(video_path):
         if sleep_time > 0:
             time.sleep(sleep_time)
 
-    audio_process.wait() # Ensure audio process completes
+    audio_process.wait() 
 
 
 def main():
