@@ -5,11 +5,10 @@
 
 ### 使用方法
 
-1.  运行二进制文件：`CharAnimationGen`
+1.  运行Python脚本：`python CharAnimationGen.py`
 2.  输入视频路径
 3.  选择是否播放视频
 
-* 如果你是Arch Linux用户，你可以通过`makepkg -si`安装,请确保dist目录存在
 
 ### 特性
 
@@ -24,11 +23,10 @@ This project converts videos into character animations and plays them in the ter
 
 ### Usage
 
-1. Run the binary file: `CharAnimationGen`
+1. Run the Python Script: `python CharAnimationGen.py`
 2. Enter the video path
 3. Choose whether to play the video
 
-* If you are an Arch Linux user, you can install it by running `makepkg -si`. Make sure the `dist` directory exists.
 ### Features
 
 * Real-time character animation generation
