@@ -5,7 +5,8 @@
 
 ### 使用方法
 
-1.  运行Python脚本：`python CharAnimationGen.py`
+0.  安装依赖:'opencv-python'
+1.  运行二进制脚本：`dist/CharAnimationGen`
 2.  输入视频路径
 3.  选择是否播放视频
 
@@ -23,7 +24,8 @@ This project converts videos into character animations and plays them in the ter
 
 ### Usage
 
-1. Run the Python Script: `python CharAnimationGen.py`
+0. Install dependencies: 'opencv-python'
+1. Run the Binary Script: `dist/CharAnimationGen`
 2. Enter the video path
 3. Choose whether to play the video
 
