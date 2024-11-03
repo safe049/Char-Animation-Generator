@@ -4,6 +4,7 @@ import math
 import time
 import os
 import subprocess
+import argparse
 
 ending = False
 
@@ -74,7 +75,10 @@ def play_video(video_path):
 
 def main():
     global ending
-    video_path = input("Enter the video path: ")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--path", required=True, help="Path to the video file")
+    args = parser.parse_args()
+    video_path = args.path
     while ending == False:
         play =  input("Play video? (y/n): ")
         if play == "y" or "Y":
