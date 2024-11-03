@@ -73,6 +73,7 @@ def play_video(video_path):
 
 
 def main():
+    global ending
     video_path = input("Enter the video path: ")
     while ending == False:
         play =  input("Play video? (y/n): ")
