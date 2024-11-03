@@ -11,7 +11,7 @@ sha256sums=('SKIP') # Calculate this later
 
 package() {
   # Extract the source
-  unzip -q "${srcdir}/${pkgname}-main.zip" -d "${srcdir}"
+  unzip -q "${srcdir}/main.zip" -d "${srcdir}"
 
   # Install the binary
   install -Dm755 "${srcdir}/Char-Animation-Generator-main/dist/CharAnimationGen" "${pkgdir}/usr/bin/CharAnimationGen"
